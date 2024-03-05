@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page d'accueil</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+  </head>
+  <body>
+    <div class="banner">
+      <img
+        src="{% static 'images/logo_INTrading.png' %}"
+        alt="logo INTrading"
+      />
+      <span class="logo">INTrading</span>
+      <div class="button-container">
+        <button class="button">Portefeuille</button>
+        <button class="button">Bourse</button>
+        <button class="button">Investir</button>
+      </div>
+    </div>
+    <div>
+      <span class="message_bienvenue">Bienvenue sur INTrading !</span>
+    </div>
+    <div class="assistant-investissement">
+      <h2>Votre assistant investissement</h2>
+      <div class="form-group">
+        <label for="budget">Budget :</label>
+        <input
+          type="text"
+          id="budget"
+          name="budget"
+          placeholder="Entrez votre budget (en euros)"
+        />
+      </div>
+      <div class="risques">
+        <label for="niveau-risque">Niveau de risque :</label>
+        <input
+          type="range"
+          id="niveau-risque"
+          name="niveau-risque"
+          min="1"
+          max="5"
+        />
+      </div>
+      <div class="valider">
+        <button class="valider-button">Valider</button>
+      </div>
+    </div>
+  </body>
+</html>

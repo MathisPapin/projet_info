@@ -114,3 +114,7 @@ input[type="range"] {
 .valider-button:hover {
   background-color: #2c5a7e; /*permet de légèrement changer la couleur du bouton quand on passe dessus avec la souris*/
 }
+
+.age-title {
+  font-family: Impact, fantasy;
+}

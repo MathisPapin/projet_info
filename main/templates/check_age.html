@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vérification d'âge</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <style>
+      /* Styles spécifiques à la page de vérification d'âge */
+      .container {
+        background-color: #c0d6e4;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+        text-align: center; /* Centrage horizontal */
+      }
+
+      .container form {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <img
+        src="{% static 'images/logo_INTrading.png' %}"
+        alt="logo INTrading"
+        class="image-logo"
+      />
+      <span class="logo">INTrading</span>
+    </div>
+    <div class="container">
+      <h2 class="age-title">Veuillez entrer votre âge</h2>
+      <form method="post">
+        {% csrf_token %}
+        <input
+          type="number"
+          name="age"
+          placeholder="Entrez votre âge"
+          required
+        />
+        <button type="submit">Valider</button>
+      </form>
+    </div>
+  </body>
+</html>

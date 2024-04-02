@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Accès refusé</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+  </head>
+  <body>
+    <div class="banner">
+      <img
+        src="{% static 'images/logo_INTrading.png' %}"
+        alt="logo INTrading"
+        class="image-logo"
+      />
+      <span class="logo">INTrading</span>
+    </div>
+    <div class="container">
+      <h2 class="age-title">Accès refusé</h2>
+      <p class="explanation">
+        Désolé, vous devez avoir plus de 18 ans pour accéder à ce site. Les
+        sites de trading sont interdits aux mineurs en raison des risques
+        financiers élevés et de la nécessité d'une pleine capacité juridique
+        pour engager des transactions financières. Cette réglementation est
+        conforme aux normes établies pour protéger les consommateurs et les
+        investisseurs.
+      </p>
+      <img
+        src="{% static 'images/moins18.png' %}"
+        alt="Interdit aux mineurs"
+        class="image-18"
+      />
+    </div>
+  </body>
+</html>

@@ -39,7 +39,7 @@ body {
   background-color: #e0dbcd;
 }
 
-img {
+.image-logo {
   width: 120px; /* Largeur du logo */
   height: 120px; /* Hauteur du logo */
   position: absolute; /* Position absolue par rapport au conteneur parent */
@@ -116,5 +116,18 @@ input[type="range"] {
 }
 
 .age-title {
-  font-family: Impact, fantasy;
+  font-family: Impact, fantasy !important;
+}
+
+/* Assure le centrage du texte pour tous les éléments à l'intérieur de .container */
+.container {
+  text-align: center; /* Déjà présent si vous avez utilisé le même style que check_age.html */
+  padding: 20px;
+  margin: 0 auto; /* Centre le conteneur si nécessaire */
+}
+
+/* Style pour le texte d'explication */
+.explanation {
+  font-family: Arial, sans-serif; /* Exemple de police, ajustez selon vos préférences */
+  margin-top: 20px; /* Ajustez l'espacement selon le besoin */
 }

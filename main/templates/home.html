@@ -25,7 +25,7 @@
       </div>
     </div>
     <div>
-      <span class="message_bienvenue">Bienvenue sur INTrading !</span>
+      <span class="message_bienvenue">Bienvenue sur INTrading {{user.username}} !</span>
     </div>
     <div class="assistant-investissement">
       <h2>Votre assistant investissement</h2>
@@ -52,5 +52,12 @@
         <button class="valider-button">Valider</button>
       </div>
     </div>
+    <span style="float:topright">
+      {% if user.is_authenticated %}
+        <span><a href="{% url 'logout' %}">Déconnexion</a></span>
+      {% else %}
+        <span><a href="{% url 'login' %}">login</a></span>
+      {% endif %}
+    </span>
   </body>
 </html>

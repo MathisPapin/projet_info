@@ -25,38 +25,30 @@
       </div>
     </div>
     <div>
-      <span class="message_bienvenue">Bienvenue sur INTrading {{user.username}} !</span>
+      <span class="message_bienvenue"
+        >Bienvenue sur INTrading {{user.username}} !</span
+      >
     </div>
-    <div class="assistant-investissement">
-      <h2>Votre assistant investissement</h2>
-      <div class="form-group">
-        <label for="budget">Budget :</label>
-        <input
-          type="text"
-          id="budget"
-          name="budget"
-          placeholder="Entrez votre budget (en euros)"
-        />
-      </div>
-      <div class="risques">
-        <label for="niveau-risque">Niveau de risque :</label>
-        <input
-          type="range"
-          id="niveau-risque"
-          name="niveau-risque"
-          min="1"
-          max="5"
-        />
-      </div>
-      <div class="valider">
-        <button class="valider-button">Valider</button>
-      </div>
-    </div>
-    <span style="float:topright">
+    <form method="POST" action="{% url 'graphique' %}">
+      {% csrf_token %}
+      <label for="ticker">Nom de l'action (ticker) :</label>
+      <input type="text" id="ticker" name="ticker" required />
+      <label for="date_debut">Date de début :</label>
+      <input type="date" id="date_debut" name="date_debut" required />
+      <label for="date_fin">Date de fin :</label>
+      <input type="date" id="date_fin" name="date_fin" required />
+      <label for="type_graphique">Type de graphique :</label>
+      <select id="type_graphique" name="type_graphique">
+        <option value="line">Ligne</option>
+        <option value="candlestick">Chandelier</option>
+      </select>
+      <button type="submit">Afficher le graphique</button>
+    </form>
+    <span style="float: topright">
       {% if user.is_authenticated %}
-        <span><a href="{% url 'logout' %}">Déconnexion</a></span>
+      <span><a href="{% url 'logout' %}">Déconnexion</a></span>
       {% else %}
-        <span><a href="{% url 'login' %}">login</a></span>
+      <span><a href="{% url 'login' %}">login</a></span>
       {% endif %}
     </span>
   </body>
